@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal-deep: #161A18;
+  --color-charcoal-dark: #222825;
+  --color-charcoal: #3B413C;
+  --color-charcoal-light: #4A524C;
+  --color-ash: #9DB5B2;
+  --color-ash-dark: #6C827F;
+  --color-light-cyan: #DAF0EE;
+  --color-aqua: #94D1BE;
+  --color-aqua-hover: #A5DBCB;
+  --color-white: #FFFFFF;
+}
+
+@layer base {
+  body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #161A18;
+    color: #DAF0EE;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Custom Tactical & Pearl Aqua Glows */
+.cyber-glow-aqua {
+  box-shadow: 0 0 25px -4px rgba(148, 209, 190, 0.35);
+}
+
+.cyber-glow-charcoal {
+  box-shadow: 0 0 25px -4px rgba(59, 65, 60, 0.4);
+}
+
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    rgba(218, 240, 238, 0),
+    rgba(218, 240, 238, 0) 50%,
+    rgba(22, 26, 24, 0.35) 50%,
+    rgba(22, 26, 24, 0.35)
+  );
+  background-size: 100% 4px;
+}
+
+/* Custom Palette Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(22, 26, 24, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 82, 76, 0.7);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 209, 190, 0.6);
+}
+
+/* ==========================================================================
+   OPTIMIZED A4 PRINT STYLESHEET FOR PROFESSIONAL AUDIT REPORTS
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm 14mm 14mm 14mm;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #2b312e !important;
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  #root {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  main {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide all UI elements, topbars, buttons, video chat, drawer, floating elements */
+  .no-print,
+  header,
+  footer,
+  nav,
+  button,
+  [role="dialog"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-only {
+    display: flex !important;
+  }
+
+  /* Review Document Paper Styling in Print */
+  .review-document-content,
+  #review-document-paper {
+    background-color: #ffffff !important;
+    color: #2b312e !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 10.5pt !important;
+  }
+
+  /* Clean headings without page-break orphans */
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    color: #161a18 !important;
+  }
+
+  h1 {
+    font-size: 18pt !important;
+    margin-bottom: 4pt !important;
+  }
+
+  h2 {
+    font-size: 12pt !important;
+    margin-top: 10pt !important;
+    margin-bottom: 6pt !important;
+  }
+
+  /* Prevent breaking inside cards, rubrics, and action items */
+  p, li, tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-avoid-break,
+  .p-4,
+  .p-5,
+  .p-6,
+  .rounded-xl,
+  .review-document-content > div {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Tables */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 9.5pt !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tbody tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  th, td {
+    padding: 6pt 8pt !important;
+  }
+
+  /* Clean print borders */
+  .border,
+  .border-b,
+  .border-t,
+  .border-2 {
+    border-color: #d1d5db !important;
+  }
+
+  .border-b-2 {
+    border-color: #3b413c !important;
+  }
+
+  /* Ensure print text contrast */
+  .text-slate-900,
+  .text-slate-950,
+  .text-[#3B413C] {
+    color: #1a1f1d !important;
+  }
+
+  .text-slate-600,
+  .text-slate-700,
+  .text-[#4A524C] {
+    color: #3b413c !important;
+  }
+
+  .text-slate-500,
+  .text-[#6C827F] {
+    color: #55625e !important;
+  }
+
+  /* Links without clumsy underlines */
+  a {
+    color: #1a1f1d !important;
+    text-decoration: underline !important;
+  }
+
+  /* Disable animations completely */
+  .animate-pulse,
+  .animate-spin,
+  .animate-bounce,
+  .animate-ping {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TaskReview Pro - AI Client Task & Deliverable Review System",
+  "description": "Upload client task folders or project deliverables for deep AI analysis, professional executive review documents, automatic review date/time scheduling, and an interactive Google Meet review session with the AI reviewer.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
